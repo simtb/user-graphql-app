@@ -1,0 +1,90 @@
+{
+  allUsers{
+    edges{
+      node{
+        uuid
+        username
+        datetimeCreated
+        }
+      }
+    }
+  }
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+{
+  allPosts{
+    edges{
+      node{
+        title
+        content
+        author{
+          username
+        }
+      }
+    }
+  }
+}
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+{
+  allInformation{
+    edges{
+      node{
+        uuid
+        firstName
+        lastName
+        favouriteSong
+        }
+      }
+    }
+  }
+ 
+ 
+ 
+ 
+ 
+mutation {
+  createdInformation(username:"johndoe", firstName:"John", lastName: "Doe", age: 54, education: "school", company: "Tesco" city:"Singapore", favouriteHobby: "Singing", favouriteSong: "ABBA", favouriteMovie: "Incredibles"){
+    information{
+      firstName
+      lastName
+      age
+      city
+      }
+    }
+  }
+ 
+ 
+ 
+mutation {
+  createUser(username:"johndoe"){
+    user{
+      username
+      }
+    }
+  }
+ 
+ 
+mutation {
+  createPost(username:"johndoe", title:"Hello 2", content:"Hello body 2"){
+    post{
+      title
+      content
+      author{
+        username
+      }
+    }
+  }
+}
